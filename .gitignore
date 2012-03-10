@@ -1,0 +1,6 @@
+.DS_Store
+.monitor
+*.swp
+*/node_modules
+config.json
+*.swp

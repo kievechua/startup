@@ -1,0 +1,31 @@
+div.content
+    h3 Setting&nbsp;
+
+    form#setting-form
+        fieldset
+            each data, i in ns
+                div
+                    div.clearfix
+                        label Name
+                        div.input
+                            input(type="text", name="name", value="#{i}", class="xxlarge required unique")
+                    div.clearfix
+                        label Label
+                        div.input
+                            input(type="text", name="label", value="#{data.label}", class="xxlarge required")
+                    div.clearfix
+                        label Command
+                        div.input
+                            input(type="text", name="command", value="#{data.command}", class="xxlarge required", placeholder="cd /Users/me/github/myProject; node app.js;")
+                    div.clearfix
+                        label &#40;Optional&#41;&nbsp;Link
+                        div.input
+                            input(type="text", name="link", value="#{data.link || ''}", class="xxlarge")
+                    div.clearfix.input
+                        button(id="delete-setting", class="btn danger") Delete
+                    br
+
+            div.actions
+                input(type="submit", name="submit", value="Save", class="btn primary")
+                &nbsp;
+                button(name="add-setting", class="btn secondary") Add

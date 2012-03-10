@@ -1,0 +1,41 @@
+div.content
+    button(name='start', value='all', class='btn primary') Start
+    &nbsp;
+    button(name='restart', value='all', class='btn') Restart
+    &nbsp;
+    button(name='stop', value='all', class='btn danger disabled', disabled='disabled') Stop
+    &nbsp;
+    span.alert-message.block-message.info Try press ctrl + h
+    hr
+
+    ul.tabs
+        li.active
+            a(href='#webinal-tab', title="ctrl + 1", rel="twipsy") Webinal
+        - var index = 2
+        each data, i in ns
+            li
+                a(href='##{i}-tab', title="ctrl + #{index}", rel="twipsy") #{data.label}
+                - index++
+    div.pill-content
+        mixin list(data, i)
+            button(name='start', value='#{i}', class='btn primary', title="ctrl + s", rel="twipsy") Start
+            &nbsp;
+            button(name='restart', value='#{i}', class='btn', title="ctrl + r", rel="twipsy") Restart
+            &nbsp;
+            button(name='stop', value='#{i}', class='btn danger', title="ctrl + c", rel="twipsy") Stop
+            if data.link
+                &nbsp;
+                a(href='#{data.link}', target='_blank', class="btn info open", title="ctrl + t", rel="twipsy") Open
+            br
+            br
+
+            div(id="#{i}")
+
+        div(id="webinal-tab", class="active")
+            form#webinal-form
+                input(name="webinal", class="span19", , title="ctrl + s", rel="twipsy")
+            div#webinal
+
+        each data, i in ns
+            div(id="#{i}-tab")
+                mixin list(data, i)

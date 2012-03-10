@@ -1,0 +1,25 @@
+!!! 5
+html(lang="en")
+    head
+        title Start Up!
+        link(href="/stylesheets/libs/jquery-ui.css",     rel="stylesheet", type="text/css")
+        link(href="/stylesheets/libs/bootstrap.min.css", rel="stylesheet", type="text/css")
+        link(href="/stylesheets/index.css",              rel="stylesheet", type="text/css")
+
+body
+    include header
+
+    div.container-fluid
+        include sidebar
+        {{body}}
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/libs/jquery.min.js')
+    script(src='/javascripts/libs/jquery-ui.min.js')
+    script(src='/javascripts/libs/bootstrap-buttons.js')
+    script(src='/javascripts/libs/bootstrap-tabs.js')
+    script(src='/javascripts/libs/bootstrap-twipsy.js')
+    script(src='/javascripts/socket.js')
+    {{#each links}}
+    script(src="{{this}}")
+    {{/each}}
