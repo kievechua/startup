@@ -1,3 +1,4 @@
+# Deprecated
 # Webinal
 Terminal on web, let you start your app easily. For example, 1 button press to start couchdb, redis server and etc. Also, can run most terminal command on it. For example, ls, pwd, cd .. and etc.
 
